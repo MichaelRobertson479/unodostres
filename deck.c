@@ -84,7 +84,7 @@ int main(int argc, char *argv[]) {
     srand(time(0));
 
     // random initial card
-    lastPlayed = deck[rand() % deck.size];
+    lastPlayed = deck.arr[rand() % deck.size];
 
     // dummy variable
     int i;
