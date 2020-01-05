@@ -119,8 +119,9 @@ int main(int argc, char *argv[]) {
         
         // play card
             else if (strstr(input,"play") != NULL) {
-                printf("gets here\n");
+
                 strsep(&input," ");
+                printf("gets here\n");
                 i = atoi(input);
 
                 if (i == 0) {
