@@ -115,6 +115,8 @@ int main(int argc, char *argv[]) {
             input[i] = '\0';
         // get input
 
+        printf("input received: %s\n",input);
+
         if (strcmp(input,"draw") == 0) {
             draw();
         }
