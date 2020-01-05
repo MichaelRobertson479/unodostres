@@ -107,7 +107,6 @@ int main(int argc, char *argv[]) {
             i = 0;
             char * input;
             fgets(input, 50, stdin);
-            input[i] = '\0';
 
             while (input[i] != '\n') {
                 i++;
