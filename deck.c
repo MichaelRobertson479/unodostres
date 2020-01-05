@@ -119,7 +119,7 @@ int main(int argc, char *argv[]) {
         
         // play card
             else if (strstr(input,"play") != NULL) {
-                strsep(input," ");
+                strsep(&input," ");
                 i = atoi(input);
 
                 if (i == 0) {
