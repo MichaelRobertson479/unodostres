@@ -46,9 +46,10 @@ char * draw() {
     return card;
 }
 
-// input is index of card in hand
+// input is index of card in hand (one-indexed)
 void play (int i) {
 
+    i--;
     char * card = hand[i];
 
     // if color is same or if value is same (respectively)
@@ -119,11 +120,21 @@ int main(int argc, char *argv[]) {
         if (strcmp(input,"draw") == 0) {
             draw();
         }
+        
+        // play card
+            else if (strstr(input,"play") != NULL) {
+                strsep(input," ");
+                i = atoi(input);
 
-        else if (strstr(input,"play") != NULL) {
-            strsep(input," ");
-            play(input);
-        }
+                if (i == 0) {
+                    printf("Invalid index\n");
+                }
+
+                else {
+                    play(i);
+                }
+            }
+        // play card
     }
 
     return 0;
