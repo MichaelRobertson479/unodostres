@@ -40,7 +40,7 @@ char * lastPlayed;
 
 // only draws one card
 char * draw() {
-    char * card = deck[rand() % deck.size];
+    char * card = deck.arr[rand() % deck.size];
     hand.arr[hand.size] = card;
     hand.size++;
     return card;
