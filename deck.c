@@ -124,7 +124,6 @@ int main(int argc, char *argv[]) {
             else if (strstr(input,"play") != NULL) {
 
                 strsep(&input," ");
-                printf("gets here\n");
                 i = atoi(input);
 
                 if (i == 0) {
