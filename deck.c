@@ -46,7 +46,7 @@ void play (int i) {
     char * card = hand.arr[i];
 
     // if color is same or if value is same (respectively)
-    if (strcmp(hand.arr[i][0],lastPlayed[0]) == 0 || strcmp(hand.arr[i][1],lastPlayed[1]) == 0) {
+    if (hand.arr[i][0] == lastPlayed[0] || hand.arr[i][1] == lastPlayed[1]) {
 
         // "shift cards over"
         while (hand.arr[i] != NULL) {
