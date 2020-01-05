@@ -14,18 +14,16 @@
 // headers
 
 // deck
-    struct decks {        
-        int size;
-        char * arr[];
-    };
-
-    struct decks deck;
+    deck = {"R0","R1","R2","R3","R4","R5","R6","R7","R8","R9",
+            "B0","B1","B2","B3","B4","B5","B6","B7","B8","B9",
+            "G0","G1","G2","G3","G4","G5","G6","G7","G8","G9",
+            "Y0","Y1","Y2","Y3","Y4","Y5","Y6","Y7","Y8","Y9", };
 // deck
 
 // hand
-    struct hands {        
+    struct hands {   
+        char * arr[100]; 
         int size;
-        char * arr[];
     };
 
     struct hands hand;
@@ -35,7 +33,7 @@ char * lastPlayed;
 
 // only draws one card
 char * draw() {
-    char * card = deck.arr[rand() % deck.size];
+    char * card = deck[rand() % 40];
     hand.arr[hand.size] = card;
     hand.size++;
     return card;
@@ -45,7 +43,7 @@ char * draw() {
 void play (int i) {
 
     i--;
-    char * card = hand[i];
+    char * card = hand.arr[i];
 
     // if color is same or if value is same (respectively)
     if (strcmp(hand.arr[i][0],lastPlayed[0]) == 0 || strcmp(hand.arr[i][1],lastPlayed[1]) == 0) {
@@ -67,14 +65,7 @@ void play (int i) {
 }
 
 void init() {
-    
-    deck.arr = {"R0","R1","R2","R3","R4","R5","R6","R7","R8","R9",
-                 "B0","B1","B2","B3","B4","B5","B6","B7","B8","B9",
-                 "G0","G1","G2","G3","G4","G5","G6","G7","G8","G9",
-                 "Y0","Y1","Y2","Y3","Y4","Y5","Y6","Y7","Y8","Y9", };
-    deck.size = 40;
-
-    
+        
     hand.size = 0;
 
     draw();
@@ -89,7 +80,7 @@ int main(int argc, char *argv[]) {
     srand(time(0));
 
     // random initial card
-    lastPlayed = deck.arr[rand() % deck.size];
+    lastPlayed = deck[rand() % 40];
 
     // dummy variable
     int i;
