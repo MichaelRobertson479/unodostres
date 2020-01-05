@@ -131,6 +131,10 @@ int main(int argc, char *argv[]) {
                     printf("Invalid index\n");
                 }
 
+                else if (i >= hand.size) {
+                    printf("Invalid index\n");
+                }
+
                 else {
                     play(i);
                 }
