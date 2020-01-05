@@ -14,9 +14,9 @@
 // headers
 
 // deck
-    struct deck {
-        char * arr[];
+    struct deck {        
         int size;
+        char * arr[];
     }
 
     struct deck deck;
@@ -28,9 +28,9 @@
 // deck
 
 // hand
-    struct hand {
-        char * arr[];
+    struct hand {        
         int size;
+        char * arr[];
     };
 
     struct hand hand;
