@@ -14,12 +14,12 @@
 // headers
 
 // deck
-    struct deck {        
+    struct decks {        
         int size;
         char * arr[];
     };
 
-    struct deck deck;
+    struct decks deck;
     deck.arr = {"R0","R1","R2","R3","R4","R5","R6","R7","R8","R9",
                  "B0","B1","B2","B3","B4","B5","B6","B7","B8","B9",
                  "G0","G1","G2","G3","G4","G5","G6","G7","G8","G9",
@@ -28,12 +28,12 @@
 // deck
 
 // hand
-    struct hand {        
+    struct hands {        
         int size;
         char * arr[];
     };
 
-    struct hand hand;
+    struct hands hand;
     hand.size = 0;
 // hand
 
