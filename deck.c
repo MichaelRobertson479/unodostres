@@ -114,8 +114,6 @@ int main(int argc, char *argv[]) {
             input[i] = '\0';
         // get input
 
-        printf("input received: %s\n",input);
-
         if (strcmp(input,"draw") == 0) {
             draw();
         }
@@ -126,10 +124,12 @@ int main(int argc, char *argv[]) {
                 strsep(&input," ");
                 i = atoi(input);
 
+                // "word" or 0 as index
                 if (i == 0) {
                     printf("Invalid index\n");
                 }
 
+                // out-of-bound index
                 else if (i > hand.size) {
                     printf("Invalid index\n");
                 }
