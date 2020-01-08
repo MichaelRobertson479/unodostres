@@ -58,6 +58,10 @@ void init() {
 
             //increase "player number"
             (*data)++;
+
+            inputPlayers = shmget(PLAYERS, sizeof(int), 0644);
+            data = shmat(inputPlayers, 0, 0);
+            players = *data;
         }
     }
 
