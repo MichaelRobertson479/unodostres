@@ -41,7 +41,7 @@ void init() {
 
         if (*data == 0) {
             printf("Game is full\n");
-            exit();
+            exit(0);
         }
 
         else {
