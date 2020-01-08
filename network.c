@@ -16,7 +16,7 @@
 // headers
 
 // memory
-    #define NUMOFPLAYERS 12345
+    #define NUMOFPLAYERS 95312
     #define PLAYERS 23456
     #define TURNCOUNT 34567
     #define PLAYERNUM 45678
