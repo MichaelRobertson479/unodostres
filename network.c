@@ -79,7 +79,7 @@ void init() {
         printf("Input number of players: \n");
         
         //change to input later on
-        int input = ;
+        int input = 2;
 
         //set "number of players"
         *data = input;
