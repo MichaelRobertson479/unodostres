@@ -16,7 +16,7 @@
 // headers
 
 // memory
-    #define NUMOFPLAYERS 15244
+    #define NUMOFPLAYERS 15344
     #define PLAYERS 23456
     #define TURNCOUNT 34567
     #define PLAYERNUM 45678
@@ -79,7 +79,7 @@ void init() {
         printf("Input number of players: \n");
         
         //change to input later on
-        int input = 3;
+        int input = 2;
 
         //set "number of players"
         *data = input;
@@ -121,7 +121,7 @@ int main() {
     while (1) {
 
         //save turn locally
-        turnMem = shmget(TURNCOUNT, sizeof(int), 0644);
+        //turnMem = shmget(TURNCOUNT, sizeof(int), 0644);
         data = shmat(turnMem, 0, 0);
         turn = *data;
 
@@ -139,7 +139,7 @@ int main() {
 
             //until turn changes, keep getting it
             while (*data != (turn + 1)) {
-                turnMem = shmget(TURNCOUNT, sizeof(int), 0644);
+                //turnMem = shmget(TURNCOUNT, sizeof(int), 0644);
                 data = shmat(turnMem, 0, 0);
             }
 
