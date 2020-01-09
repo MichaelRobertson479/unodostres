@@ -16,7 +16,7 @@
 // headers
 
 // memory
-    #define NUMOFPLAYERS 95312
+    #define NUMOFPLAYERS 71232
     #define PLAYERS 23456
     #define TURNCOUNT 34567
     #define PLAYERNUM 45678
@@ -24,6 +24,8 @@
 
 int myNumber;
 int players;
+int turnMem;
+int turn;
 
 void init() {
 
@@ -59,9 +61,15 @@ void init() {
             //increase "player number"
             (*data)++;
 
+            //set "players"
             inputPlayers = shmget(PLAYERS, sizeof(int), 0644);
             data = shmat(inputPlayers, 0, 0);
             players = *data;
+
+            //set turn
+            turnMem = shmget(TURNCOUNT, sizeof(int), 0644);
+            data = shmat(turnMem, 0, 0);
+            turn = *data;
         }
     }
 
@@ -71,7 +79,7 @@ void init() {
         printf("Input number of players: \n");
         
         //change to input later on
-        int input = 4;
+        int input = 3;
 
         //set "number of players"
         *data = input;
@@ -94,7 +102,9 @@ void init() {
         *data = 2;
 
         //set turn count
-        // code...
+        turnMem = shmget(TURNCOUNT, sizeof(int), IPC_CREAT | 0644);
+        data = shmat(turnMem, 0, 0);
+        *data = 1;
     }
 }
 
@@ -102,8 +112,42 @@ int main() {
 
     init();
 
+    int data;
+
     printf("You are player %d\n", myNumber);
     printf("There are %d players in this game\n", players);
+
+    //change to while not win condition
+    while (true) {
+
+        //save turn locally
+        turnMem = shmget(TURNCOUNT, sizeof(int), 0644);
+        data = shmat(turnMem, 0, 0);
+        turn = *data;
+
+        if (turn % players == myNumber) {
+            printf("It's your turn\n")
+            
+            //temporary action
+            wait(10);
+        }
+
+        else {
+
+            //until turn changes, keep getting it
+            while (*data != (turn + 1)) {
+                turnMem - shmget(TURNCOUNT, sizeof(int), 0644);
+                data = shmat(turnMem, 0, 0);
+            }
+
+            turn = *data;
+            printf("It is turn %d\n", turn);
+
+            //temporary action
+            wait(10);
+        }
+
+    }
 
     return 0;
 }
