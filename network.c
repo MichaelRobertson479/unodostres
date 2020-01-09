@@ -16,7 +16,7 @@
 // headers
 
 // memory
-    #define NUMOFPLAYERS 15243
+    #define NUMOFPLAYERS 15244
     #define PLAYERS 23456
     #define TURNCOUNT 34567
     #define PLAYERNUM 45678
@@ -79,7 +79,7 @@ void init() {
         printf("Input number of players: \n");
         
         //change to input later on
-        int input = 2;
+        int input = 3;
 
         //set "number of players"
         *data = input;
