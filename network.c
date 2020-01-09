@@ -132,14 +132,14 @@ int main() {
             (*data)++;
 
             //temporary action
-            sleep(10);
+            sleep(20);
         }
 
         else {
 
             //until turn changes, keep getting it
             while (*data != (turn + 1)) {
-                turnMem - shmget(TURNCOUNT, sizeof(int), 0644);
+                turnMem = shmget(TURNCOUNT, sizeof(int), 0644);
                 data = shmat(turnMem, 0, 0);
             }
 
