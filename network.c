@@ -132,7 +132,7 @@ int main() {
             (*data)++;
 
             //temporary action
-            sleep(10);
+            //sleep(10);
         }
 
         else {
