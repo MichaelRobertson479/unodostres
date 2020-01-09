@@ -16,7 +16,7 @@
 // headers
 
 // memory
-    #define NUMOFPLAYERS 71232
+    #define NUMOFPLAYERS 71345
     #define PLAYERS 23456
     #define TURNCOUNT 34567
     #define PLAYERNUM 45678
@@ -128,6 +128,9 @@ int main() {
         if (turn % players == myNumber) {
             printf("It's your turn\n");
             
+            //increase turn
+            (*data)++;
+
             //temporary action
             sleep(10);
         }
