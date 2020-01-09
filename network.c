@@ -112,13 +112,13 @@ int main() {
 
     init();
 
-    int data;
+    int* data;
 
     printf("You are player %d\n", myNumber);
     printf("There are %d players in this game\n", players);
 
     //change to while not win condition
-    while (true) {
+    while (1) {
 
         //save turn locally
         turnMem = shmget(TURNCOUNT, sizeof(int), 0644);
@@ -126,7 +126,7 @@ int main() {
         turn = *data;
 
         if (turn % players == myNumber) {
-            printf("It's your turn\n")
+            printf("It's your turn\n");
             
             //temporary action
             wait(10);
