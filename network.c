@@ -129,7 +129,7 @@ int main() {
             printf("It's your turn\n");
             
             //temporary action
-            wait(10);
+            sleep(10);
         }
 
         else {
@@ -144,7 +144,7 @@ int main() {
             printf("It is turn %d\n", turn);
 
             //temporary action
-            wait(10);
+            sleep(10);
         }
 
     }
