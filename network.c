@@ -16,7 +16,7 @@
 // headers
 
 // memory
-    #define NUMOFPLAYERS 12665
+    #define NUMOFPLAYERS 73737
     #define PLAYERS 23456
     #define TURNCOUNT 34567
     #define PLAYERNUM 45678
@@ -125,7 +125,7 @@ int main() {
         data = shmat(turnMem, 0, 0);
         turn = *data;
 
-        if (turn % players == myNumber) {
+        if (turn % players == (myNumber - 1)) {
             printf("It's your turn\n");
             
             //increase turn
