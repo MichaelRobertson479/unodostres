@@ -16,7 +16,7 @@
 // headers
 
 // memory
-    #define NUMOFPLAYERS 43334
+    #define NUMOFPLAYERS 43704
     #define PLAYERS 23456
     #define TURNCOUNT 34567
     #define PLAYERNUM 45678
@@ -147,7 +147,7 @@ int main() {
             printf("It is turn %d\n", turn);
 
             //temporary action
-            sleep(10);
+            //sleep(10);
         }
 
     }
