@@ -79,7 +79,7 @@ void init() {
         printf("Input number of players: \n");
         
         //change to input later on
-        int input = 3;
+        int input = ;
 
         //set "number of players"
         *data = input;
@@ -104,7 +104,7 @@ void init() {
         //set turn count
         turnMem = shmget(TURNCOUNT, sizeof(int), IPC_CREAT | 0644);
         data = shmat(turnMem, 0, 0);
-        *data = 1;
+        *data = 0;
     }
 }
 
@@ -132,7 +132,7 @@ int main() {
             (*data)++;
 
             //temporary action
-            sleep(20);
+            sleep(10);
         }
 
         else {
